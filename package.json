@@ -1,5 +1,5 @@
 {
-  "name": "@mmtplanning/my-types-package",
+  "name": "@mmtplanning/simulation-types",
   "author": "Arun Gandikota <arun@mmtplanning.com>",
   "version": "1.0.1",
   "description": "Stores types used in @paidtowork/snowplow",

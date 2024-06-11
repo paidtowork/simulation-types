@@ -1,3 +1,3 @@
 export const Result = {
-    simulationId: string;
+    simulationId: string,
 };
