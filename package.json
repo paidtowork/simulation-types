@@ -1,7 +1,7 @@
 {
   "name": "@mmtplanning/my-types-package",
   "author": "Arun Gandikota <arun@mmtplanning.com>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stores types used in @paidtowork/snowplow",
   "devDependencies": {
     "typescript": "^4.9.4"
@@ -13,9 +13,5 @@
   "scripts": {
     "build": "tsc",
     "artifactregistry-login": "npx google-artifactregistry-auth"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/myorg/my-repository.git"
   }
 }
