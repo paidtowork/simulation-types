@@ -1,15 +1,13 @@
 import * as protos from '@google-cloud/optimization/build/protos/protos';
-import { SIMULATION_STATUS_ENUM } from '../status';
-type ISO8601DateString = string;
+import { ISO8601DateString, STATUS_ENUM } from '../common';
 
-export type Result = {
-    simulationId: string;
+export type Simulation = {
+    readonly simulationId: string;
     solutionUrl?: string;
-    status: SIMULATION_STATUS_ENUM;
-    time: ISO8601DateString;
-    created_at: ISO8601DateString;
+    status: STATUS_ENUM;
+    readonly created_at: ISO8601DateString;
     updated_at: ISO8601DateString;
-    userId: string;
+    readonly userId: string;
 };
 
 export type SolutionResponse = {
