@@ -13,7 +13,7 @@ export type Simulation = {
 export type SolutionResponse = {
     name: string;
     displayName: string;
-    optimzationResponse: protos.google.cloud.optimization.v1.Solu;
+    optimzationResponse: protos.google.cloud.optimization.v1.IOptimizeToursResponse;
     metadata: {
         optimizer: string;
         optimizationStartTime: string;
