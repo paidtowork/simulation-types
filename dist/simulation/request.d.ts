@@ -27,7 +27,8 @@ export type RequestData = {
     readonly userId: string;
     readonly isFastest: boolean;
     readonly simulationId: string;
-    sites: Site[];
     readonly snowDepthTrigger: number;
+    optimizer: Optimizer;
+    sites: Site[];
     vehicles: Vehicle[];
 };

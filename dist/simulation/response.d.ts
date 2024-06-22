@@ -5,8 +5,8 @@ export type Simulation = {
     readonly simulationId: string;
     solutionUrl?: string;
     status: STATUS_ENUM;
-    readonly created_at: ISO8601DateString;
-    updated_at: ISO8601DateString;
+    readonly created_at: ISO8601DateString | Timestamp;
+    updated_at: ISO8601DateString | Timestamp;
     readonly userId: string;
 };
 
