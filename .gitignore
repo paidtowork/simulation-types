@@ -2,3 +2,4 @@ node_modules/
 .yarn*
 .npmrc
 package.tgz
+yarn.lock
