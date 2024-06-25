@@ -1,3 +1,4 @@
+import { Timestamp } from '@google-cloud/firestore';
 import { ISO8601DateString } from './common';
 
 export type MMQueryResult = {

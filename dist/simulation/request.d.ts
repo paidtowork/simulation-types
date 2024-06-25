@@ -3,13 +3,16 @@ import { ISO8601DateString } from '../common';
 
 type TimeWindow = {
     startTime: ISO8601DateString;
-    softEndTime?: ISO8601DateString;
     endTime: ISO8601DateString;
+
+    // Soft end time requires cost as well
+    costPerHourAfterSoftEndTime?: number;
+    softEndTime?: ISO8601DateString;
 }
 
 export type VisitRequest = Pick<protos.google.cloud.optimization.v1.Shipment.IVisitRequest, 'arrivalLocation' | 'duration' | 'label' | 'timeWindows'>;
-export type Site = Pick<google.cloud.optimization.v1.IShipment, 'pickups' | 'penaltyCost' | 'label'>;
-export type Vehicle = Pick<google.cloud.optimization.v1.IVehicle, 'costPerHour' | 'costPerTraveledHour' | 'label' | 'startLocation' | 'startTimeWindows' | 'endTimeWindows' | 'travelMode'>;
+export type Site = Pick<protos.google.cloud.optimization.v1.IShipment, 'pickups' | 'penaltyCost' | 'label'>;
+export type Vehicle = Pick<protos.google.cloud.optimization.v1.IVehicle, 'costPerHour' | 'costPerTraveledHour' | 'label' | 'startLocation' | 'startTimeWindows' | 'endTimeWindows' | 'travelMode'>;
 
 export type Optimizer = {
     displayName: string;

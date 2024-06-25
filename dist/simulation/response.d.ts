@@ -1,4 +1,5 @@
 import * as protos from '@google-cloud/optimization/build/protos/protos';
+import { Timestamp } from '@google-cloud/firestore';
 import { ISO8601DateString, STATUS_ENUM } from '../common';
 
 export type Simulation = {
