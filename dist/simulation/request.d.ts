@@ -18,7 +18,6 @@ export type locationDataRequest = {
     readonly autoGenerate?: AutoGenerate;
 }
 
-
 // ********************* Cloud Fleet Routing API ************************
 type TimeWindow = {
     startTime: ISO8601DateString;
