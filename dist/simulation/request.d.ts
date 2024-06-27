@@ -3,12 +3,12 @@ import { ISO8601DateString } from '../common';
 
 // ********************* fetch-location-data ************************
 type AutoGenerate = {
-    mapBounds: number[],
-    sitesCount: number
+    readonly mapBounds: number[],
+    readonly sitesCount: number
 };
 type LatLong = {
-    lat: number;
-    long: number;
+    readonly lat: number;
+    readonly long: number;
 };
 export type locationDataRequest = {
     readonly start_time: ISO8601DateString;
