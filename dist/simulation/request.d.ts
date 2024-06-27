@@ -18,6 +18,16 @@ export type LocationDataRequest = {
     readonly autoGenerateConfig?: AutoGenerateConfig;
 }
 
+export type TimeWindowHTTPRequest ={
+    startTime: ISO8601DateString;
+    endTime: ISO8601DateString;
+
+    // Soft end time requires cost as well
+    softEndTime?: ISO8601DateString;
+    costPerHour?: number;
+    costPerTraveledHour?: number;
+};
+
 // ********************* Cloud Fleet Routing API ************************
 
 export type TimeWindow = Pick<protos.google.cloud.optimization.v1.ITimeWindow, 'startTime' | 'softEndTime' | 'endTime' | 'costPerHour' | 'costPerTraveledHour'>;
