@@ -19,15 +19,8 @@ export type LocationDataRequest = {
 }
 
 // ********************* Cloud Fleet Routing API ************************
-type TimeWindow = {
-    startTime: ISO8601DateString;
-    endTime: ISO8601DateString;
 
-    // Soft end time requires cost as well
-    costPerHourAfterSoftEndTime?: number;
-    softEndTime?: ISO8601DateString;
-}
-
+export type TimeWindow = Pick<protos.google.cloud.optimization.v1.ITimeWindow, 'startTime' | 'softEndTime' | 'endTime' | 'costPerHour' | 'costPerTraveledHour'>;
 export type VisitRequest = Pick<protos.google.cloud.optimization.v1.Shipment.IVisitRequest, 'arrivalLocation' | 'duration' | 'label' | 'timeWindows'>;
 export type Site = Pick<protos.google.cloud.optimization.v1.IShipment, 'pickups' | 'penaltyCost' | 'label'>;
 export type Vehicle = Pick<protos.google.cloud.optimization.v1.IVehicle, 'costPerHour' | 'costPerTraveledHour' | 'label' | 'startLocation' | 'startTimeWindows' | 'endTimeWindows' | 'travelMode'>;
