@@ -10,7 +10,7 @@ type LatLong = {
     readonly lat: number;
     readonly long: number;
 };
-export type locationDataRequest = {
+export type LocationDataRequest = {
     readonly start_time: ISO8601DateString;
     readonly end_time?: ISO8601DateString; // default 48h (most snowstorm durations)
     readonly locations: LatLong[];
