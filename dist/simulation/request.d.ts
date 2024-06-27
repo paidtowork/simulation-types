@@ -2,7 +2,7 @@ import * as protos from '@google-cloud/optimization/build/protos/protos';
 import { ISO8601DateString } from '../common';
 
 // ********************* fetch-location-data ************************
-type AutoGenerate = {
+type AutoGenerateConfig = {
     readonly mapBounds: number[],
     readonly sitesCount: number
 };
@@ -15,7 +15,7 @@ export type locationDataRequest = {
     readonly end_time?: ISO8601DateString; // default 48h (most snowstorm durations)
     readonly locations: LatLong[];
     // auto-generated location config
-    readonly autoGenerate?: AutoGenerate;
+    readonly autoGenerateConfig?: AutoGenerateConfig;
 }
 
 // ********************* Cloud Fleet Routing API ************************
