@@ -1,7 +1,13 @@
 import { ISO8601DateString, SimulationStatusType } from './common';
-import {SolutionType} from './simulation/response'
+import { SolutionType } from './simulation/response'
+
+// datetime
+export type DatetimeStore = {
+    selectedTimeInISO8601: string;
+};
 
 // location
+// TODO: Clarify defintion for site (location + realty info + weather) v. location
 // TODO: Consolidate LatLng and LatLong
 export type LatLng = {
     lat: number;
@@ -21,6 +27,14 @@ export type LocationListRow = {
     };
     index?: number;
 };
+
+export type LocationStore = {
+    center: LatLng,
+    globalInfoWindowOpen: boolean,
+    locations: Location[],
+    DEPRECATEDLocations: LocationListRow[],
+    requestedLocationsCount: number,
+}
 
 // simulation
 export type SimulationStore = {
