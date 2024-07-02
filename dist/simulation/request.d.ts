@@ -3,7 +3,7 @@ import { ISO8601DateString } from '../common';
 
 // ********************* fetch-location-data ************************
 type AutoGenerateConfig = {
-    readonly mapBounds: number[],
+    readonly mapBounds: [number, number][],
     readonly sitesCount: number
 };
 type LatLong = {
