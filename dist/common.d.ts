@@ -1,8 +1,8 @@
 export type ISO8601DateString = string;
-
-export type SimulationStatusType = number;
-export const SimulationStatus = {
+const SIMULATION_STATUS = {
     'pending': 0,
     'success': 1,
-    'failure': 2
-};
+    'failure': 2,
+} as const;
+type ObjectValues<T> = T[keyof T];
+export type SimulationStatus = ObjectValues<typeof SIMULATION_STATUS>;
