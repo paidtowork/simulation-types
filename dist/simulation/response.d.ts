@@ -51,8 +51,6 @@ export type AggregatedMetrics = {
     visitDuration: string,
     totalDuration: string,
     travelDistanceMeters: number,
-    costs?: RouteCosts,
-    totalCost: number
 };
 
 export type ShipmentRoute = {
