@@ -21,7 +21,7 @@ export type EncodedPolyline = {
 
 export type Transition = {
     travelDuration: string,
-    travelDistanceMeters: number,
+    travelDistanceMeters?: number,
     trafficInfoUnavailable?: boolean,
     delayDuration?: string,
     breakDuration?: string,
@@ -55,18 +55,18 @@ export type AggregatedMetrics = {
 
 export type ShipmentRoute = {
     vehicleIndex?: number,
-    vehicleLabel?: string,
+    vehicleLabel?: string, //TODO: Once labels get passed in successfully, make this required
     vehicleName: string,
-    vehicleStartTime: ISO8601DateString,
-    vehicleEndTime: ISO8601DateString,
-    visits: Visit[],
-    transitions: Transition[],
+    vehicleStartTime?: ISO8601DateString,
+    vehicleEndTime?: ISO8601DateString,
+    visits?: Visit[],
+    transitions?: Transition[],
     hasTrafficInfeasibilities?: boolean,
     routePolyline?: EncodedPolyline,
     breaks?: Break[],
-    metrics: AggregatedMetrics,
-    routeCosts: RouteCosts,
-    routeTotalCost: number,
+    metrics?: AggregatedMetrics,
+    routeCosts?: RouteCosts,
+    routeTotalCost?: number,
 };
 
 export type SkippedShipment = {};// TODO: handle SkippedShipment
