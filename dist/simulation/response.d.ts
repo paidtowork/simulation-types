@@ -1,6 +1,6 @@
 import * as protos from '@google-cloud/optimization/build/protos/protos';
 import { Timestamp } from '@google-cloud/firestore';
-import { ISO8601DateString, SimulationStatusType } from '../common';
+import { ISO8601DateString, SimulationStatus } from '../common';
 import { WeatherEvent } from '../weather';
 
 // ********************* Cloud Fleet REST API: OptimizeToursResponse ************************
@@ -99,7 +99,7 @@ export type LocationDataResponse = {
 export type Simulation = {
     readonly simulationId: string;
     solutionUrl?: string;
-    status: SimulationStatusType;
+    status: SimulationStatus;
     readonly created_at: ISO8601DateString | Timestamp;
     updated_at: ISO8601DateString | Timestamp;
     readonly userId: string;

@@ -1,4 +1,4 @@
-import { ISO8601DateString, SimulationStatusType } from './common';
+import { ISO8601DateString, SimulationStatus } from './common';
 import { OptimizeToursResponse } from './simulation/response'
 
 // datetime
@@ -44,7 +44,7 @@ export type SimulationStore = {
     readonly mapBounds?: [number, number][];
     readonly result?: OptimizeToursResponse;
 
-    status: SimulationStatusType,
+    status: SimulationStatus,
     readonly snowDepthTrigger?: number,
 };
 
