@@ -1,5 +1,5 @@
-import { ISO8601DateString, SimulationStatusType } from './common';
-import { SolutionType } from './simulation/response'
+import { ISO8601DateString, SimulationStatus } from './common';
+import { OptimizeToursResponse } from './simulation/response'
 
 // datetime
 export type DatetimeStore = {
@@ -42,9 +42,9 @@ export type SimulationStore = {
     // unless there is a pending(last step in UserJourney) or already completed simulation.
     readonly simulationId: (string | null);
     readonly mapBounds?: [number, number][];
-    readonly result?: SolutionType;
+    readonly result?: OptimizeToursResponse;
 
-    status: SimulationStatusType,
+    status: SimulationStatus,
     readonly snowDepthTrigger?: number,
 };
 
