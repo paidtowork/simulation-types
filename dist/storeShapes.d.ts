@@ -19,7 +19,7 @@ export type Location = LatLng & {
     street_address: string;
 };
 
-export type LocationListRow = {
+export type VisitListRow = {
     streetAddress: string;
     time: {
         arrivalTime: ISO8601DateString;
@@ -27,6 +27,23 @@ export type LocationListRow = {
     };
     index?: number;
 };
+
+export type TransitionListRow = {
+    distance: number;
+    distanceUnit: 'mi' | 'km';
+    duration: {
+        days?: number;
+        hours: number;
+        minutes: number;
+    }
+    time?: {
+        arrivalTime: ISO8601DateString;
+        departureTime: ISO8601DateString;
+    };
+    index?: number;
+};
+
+export type LocationListRow = (VisitListRow | TransitionListRow);
 
 export type LocationStore = {
     center: LatLng,
