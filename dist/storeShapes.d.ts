@@ -20,27 +20,29 @@ export type Location = LatLng & {
 };
 
 export type VisitListRow = {
-    streetAddress: string;
-    time: {
+    readonly streetAddress: string;
+    readonly time: {
         arrivalTime: ISO8601DateString;
         departureTime: ISO8601DateString;
     };
-    index?: number;
+    readonly type: 'visit';
+    readonly index?: number;
 };
 
 export type TransitionListRow = {
-    distance: number;
-    distanceUnit: 'mi' | 'km';
-    duration: {
+    readonly distance: number;
+    readonly distanceUnit: 'mi' | 'km';
+    readonly duration: {
         days?: number;
         hours: number;
         minutes: number;
-    }
-    time?: {
+    };
+    readonly time?: {
         arrivalTime: ISO8601DateString;
         departureTime: ISO8601DateString;
     };
-    index?: number;
+    readonly type: 'transition';
+    readonly index?: number;
 };
 
 export type LocationListRow = (VisitListRow | TransitionListRow);
