@@ -53,7 +53,10 @@ export type AggregatedMetrics = {
     readonly travelDistanceMeters: number,
 };
 
-export type IdleShipmentRoute = { readonly vehicleName: string };
+export type IdleShipmentRoute = {
+    readonly vehicleName: string;
+    readonly type: 'IdleShipmentRoute';
+};
 export type ShipmentRoute = {
     readonly vehicleIndex?: number,
     readonly vehicleLabel?: string, //TODO: Once labels get passed in successfully, make this required
@@ -68,6 +71,7 @@ export type ShipmentRoute = {
     readonly metrics: AggregatedMetrics,
     readonly routeCosts: RouteCosts,
     readonly routeTotalCost: number,
+    readonly type: 'ShipmentRoute';
 };
 export type Route = IdleShipmentRoute | ShipmentRoute;
 
