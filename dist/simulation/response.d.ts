@@ -81,11 +81,11 @@ export type GlobalMetrics = {
 };
 
 export type OptimizeToursResponse = {
-    routes: ShipmentRoute[];
+    routes?: ShipmentRoute[];
     requestLabel?: string;
     skippedShipments?: SkippedShipment[];
     validationErrors?: OptimizeToursValidationError[];
-    metrics: GlobalMetrics;
+    metrics?: GlobalMetrics;
 };
 
 // ********************* route: fetch-location-data ************************
