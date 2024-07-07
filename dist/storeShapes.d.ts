@@ -68,9 +68,13 @@ export type SimulationStore = {
 };
 
 // user
+export type DistanceUnitType = 'mi' | 'km';
+export type LocaleUnitType = 'en' | 'fr';
+export type TemperatureUnitType = 'C' | 'F';
+export type TimeFormatType = 'MMM DD hh:mm A' | 'DD MMM HH:mm';
 export type UserStore = {
-    distanceUnit: 'metric' | 'US';
-    locale: 'en' | 'fr';
-    temperatureUnit: 'C' | 'F';
-    timeFormat: 'MMM DD hh:mm A' | 'DD MMM HH:mm',
+    distanceUnit: DistanceUnitType;
+    locale: LocaleUnitType;
+    temperatureUnit: TemperatureUnitType;
+    timeFormat: TimeFormatType;
 };
