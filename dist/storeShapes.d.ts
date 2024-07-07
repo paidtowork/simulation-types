@@ -48,3 +48,10 @@ export type SimulationStore = {
     readonly snowDepthTrigger?: number,
 };
 
+// user
+export type UserStore = {
+    distanceUnit: 'metric' | 'US';
+    locale: 'en' | 'fr';
+    temperatureUnit: 'C' | 'F';
+    timeFormat: 'MMM DD hh:mm A' | 'DD MMM HH:mm',
+};
