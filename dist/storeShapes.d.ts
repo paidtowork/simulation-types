@@ -1,5 +1,5 @@
 import { ISO8601DateString, SimulationStatus } from './common';
-import { OptimizeToursResponse } from './simulation/response'
+import { EncodedPolyline, OptimizeToursResponse } from './simulation/response'
 
 // datetime
 export type DatetimeStore = {
@@ -27,6 +27,7 @@ export type VisitListRow = {
     };
     readonly type: 'visit';
     readonly index?: number;
+    readonly routeId?: number;
 };
 
 export type TransitionListRow = {
@@ -43,12 +44,14 @@ export type TransitionListRow = {
     };
     readonly type: 'transition';
     readonly index?: number;
+    readonly routeId?: number;
 };
 
 export type LocationListRow = (VisitListRow | TransitionListRow);
 
 export type LocationStore = {
     center: LatLng,
+    encodedPolyline: EncodedPolyline,
     globalInfoWindowOpen: boolean,
     locations: Location[],
     DEPRECATEDLocations: LocationListRow[],
