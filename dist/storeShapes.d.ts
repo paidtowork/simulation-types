@@ -51,7 +51,10 @@ export type LocationListRow = (VisitListRow | TransitionListRow);
 
 export type LocationStore = {
     center: LatLng,
-    encodedPolyline: EncodedPolyline,
+    encodedPolylineForRoute: {
+        routeId: number;
+        encodedPolyline: EncodedPolyline;
+    };
     globalInfoWindowOpen: boolean,
     locations: Location[],
     DEPRECATEDLocations: LocationListRow[],
