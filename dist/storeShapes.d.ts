@@ -22,7 +22,6 @@ export type Location = LatLng & {
 
 export type VisitListRow = {
     readonly streetAddress: string;
-    readonly shipmentId: number;
     readonly time: {
         arrivalTime: ISO8601DateString;
         departureTime: ISO8601DateString;
@@ -30,6 +29,7 @@ export type VisitListRow = {
     readonly type: 'visit';
     readonly index?: number;
     readonly routeId?: number;
+    readonly shipmentId?: number; // TODO: useless?
 };
 
 export type TransitionListRow = {
@@ -53,10 +53,14 @@ export type LocationListRow = (VisitListRow | TransitionListRow);
 export type EncodedPolylineForRoute = {
     [routeId: number]: EncodedPolyline;
 };
+export type EncodedPolylineForRouteTransitions = {
+    [routeId: number]: EncodedPolyline[];
+};
 
 export type LocationStore = {
     center: LatLng,
     encodedPolylineForRoute?: EncodedPolylineForRoute;
+    encodedPolylineForRouteTransitions?: EncodedPolylineForRouteTransitions;
     globalInfoWindowOpen: boolean,
     locations: Location[],
     DEPRECATEDLocations: LocationListRow[],
