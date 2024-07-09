@@ -62,7 +62,7 @@ export type LocationStore = {
 
     // Show only one route's polylines at a time
     // Polylines is handled by RouteGrid
-    polylineHexColor: string;
+    polylineHexColor?: string;
     encodedPolylineForRoute?: EncodedPolyline;
     encodedPolylineForRouteTransitions?: EncodedPolyline[];
     
