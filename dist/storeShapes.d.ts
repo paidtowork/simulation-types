@@ -59,8 +59,12 @@ export type EncodedPolylineForRouteTransitions = {
 
 export type LocationStore = {
     center: LatLng,
-    encodedPolylineForRoute?: EncodedPolylineForRoute;
-    encodedPolylineForRouteTransitions?: EncodedPolylineForRouteTransitions;
+
+    // Show only one route's polylines at a time
+    // Polylines is handled by RouteGrid
+    encodedPolylineForRoute?: EncodedPolyline;
+    encodedPolylineForRouteTransitions?: EncodedPolyline[];
+    
     globalInfoWindowOpen: boolean,
     locations: Location[],
     DEPRECATEDLocations: LocationListRow[],
