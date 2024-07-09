@@ -12,19 +12,21 @@ type TimeWindow = {
     costPerHourAfterSoftEndTime?: number;
 };
 
-type Pickup = {
+type OptimizeToursRequestPickup = {
     arrivalLocation: LatitudeLongitude;
     timeWindows: TimeWindow[];
     duration: string;
 };
 
-type Shipment = {
-    pickups: Pickup[];
+type OptimizeToursRequestShipment = {
+    label: string;
+    pickups: OptimizeToursRequestPickup[];
     penaltyCost?: number;
     name: string;
 };
 
-type Vehicle = {
+type OptimizeToursRequestVehicle = {
+    label?: string;
     startLocation: LatitudeLongitude;
     startTimeWindows: TimeWindow[];
     costPerHour?: number;
@@ -33,8 +35,8 @@ type Vehicle = {
 };
 
 type OptimizeToursRequestModel = {
-    shipments: Shipment[];
-    vehicles: Vehicle[];
+    shipments: OptimizeToursRequestShipment[];
+    vehicles: OptimizeToursRequestVehicle[];
     globalStartTime: ISO8601DateString;
     globalEndTime: ISO8601DateString;
 };
