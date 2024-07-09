@@ -1,5 +1,5 @@
 import { ISO8601DateString, SimulationStatus } from './common';
-import { EncodedPolyline, OptimizeToursResponse } from './simulation/response'
+import { EncodedPolyline, OptimizeToursRequest, OptimizeToursResponse } from './simulation/response'
 
 // datetime
 export type DatetimeStore = {
