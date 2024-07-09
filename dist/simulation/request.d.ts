@@ -30,6 +30,7 @@ export type TimeWindowHTTPRequest ={
 
 // ********************* Cloud Fleet Routing API ************************
 
+// TODO: Slated for removal after 2024-07-31
 export type TimeWindow = Pick<protos.google.cloud.optimization.v1.ITimeWindow, 'startTime' | 'softEndTime' | 'endTime' | 'costPerHourAfterSoftEndTime'>;
 export type VisitRequest = Pick<protos.google.cloud.optimization.v1.Shipment.IVisitRequest, 'arrivalLocation' | 'cost' | 'duration' | 'label' | 'timeWindows'>;
 export type Site = Pick<protos.google.cloud.optimization.v1.IShipment, 'pickups' | 'penaltyCost' | 'label'>;

@@ -68,6 +68,7 @@ export type SimulationStore = {
     // unless there is a pending(last step in UserJourney) or already completed simulation.
     readonly simulationId: (string | null);
     readonly mapBounds?: [number, number][];
+    readonly response?: OptimizeToursRequest;
     readonly result?: OptimizeToursResponse;
 
     status: SimulationStatus,
