@@ -21,6 +21,7 @@ export type Location = LatLng & {
 };
 
 export type VisitListRow = {
+    readonly coords: LatLng;
     readonly streetAddress: string;
     readonly time: {
         arrivalTime: ISO8601DateString;
