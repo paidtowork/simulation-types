@@ -1,5 +1,6 @@
 import { ISO8601DateString, SimulationStatus } from './common';
-import { OptimizeToursResponse } from './simulation/response'
+import { EncodedPolyline, OptimizeToursResponse } from './simulation/response'
+import { OptimizeToursRequest } from './simulation/optimizeToursRequest';
 
 // datetime
 export type DatetimeStore = {
@@ -19,17 +20,53 @@ export type Location = LatLng & {
     street_address: string;
 };
 
-export type LocationListRow = {
-    streetAddress: string;
-    time: {
+export type VisitListRow = {
+    readonly coords: LatLng;
+    readonly streetAddress: string;
+    readonly time: {
         arrivalTime: ISO8601DateString;
         departureTime: ISO8601DateString;
     };
-    index?: number;
+    readonly type: 'visit';
+    readonly index?: number;
+    readonly routeId?: number;
+    readonly shipmentId?: number; // TODO: useless?
+};
+
+export type TransitionListRow = {
+    readonly distance: number;
+    readonly distanceUnit: 'mi' | 'km';
+    readonly duration: {
+        days?: number;
+        hours: number;
+        minutes: number;
+    };
+    readonly time?: {
+        arrivalTime: ISO8601DateString;
+        departureTime: ISO8601DateString;
+    };
+    readonly type: 'transition';
+    readonly index?: number;
+    readonly routeId?: number;
+};
+
+export type LocationListRow = (VisitListRow | TransitionListRow);
+export type EncodedPolylineForRoute = {
+    [routeId: number]: EncodedPolyline;
+};
+export type EncodedPolylineForRouteTransitions = {
+    [routeId: number]: EncodedPolyline[];
 };
 
 export type LocationStore = {
     center: LatLng,
+
+    // Show only one route's polylines at a time
+    // Polylines is handled by RouteGrid
+    polylineHexColor?: string;
+    encodedPolylineForRoute?: EncodedPolyline;
+    encodedPolylineForRouteTransitions?: EncodedPolyline[];
+    
     globalInfoWindowOpen: boolean,
     locations: Location[],
     DEPRECATEDLocations: LocationListRow[],
@@ -42,6 +79,7 @@ export type SimulationStore = {
     // unless there is a pending(last step in UserJourney) or already completed simulation.
     readonly simulationId: (string | null);
     readonly mapBounds?: [number, number][];
+    readonly request?: OptimizeToursRequest;
     readonly result?: OptimizeToursResponse;
 
     status: SimulationStatus,
@@ -49,9 +87,13 @@ export type SimulationStore = {
 };
 
 // user
+export type DistanceUnitType = 'mi' | 'km';
+export type LocaleUnitType = 'en' | 'fr';
+export type TemperatureUnitType = 'C' | 'F';
+export type TimeFormatType = 'MMM DD hh:mm A' | 'DD MMM HH:mm';
 export type UserStore = {
-    distanceUnit: 'metric' | 'US';
-    locale: 'en' | 'fr';
-    temperatureUnit: 'C' | 'F';
-    timeFormat: 'MMM DD hh:mm A' | 'DD MMM HH:mm',
+    distanceUnit: DistanceUnitType;
+    locale: LocaleUnitType;
+    temperatureUnit: TemperatureUnitType;
+    timeFormat: TimeFormatType;
 };
