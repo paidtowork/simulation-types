@@ -1,19 +1,18 @@
 import * as protos from '@google-cloud/optimization/build/protos/protos';
-import { ISO8601DateString } from '../common';
+import { ISO8601DateString, LatLng } from '../common';
+import { Location } from '../storeShapes';
 
 // ********************* fetch-location-data ************************
 type AutoGenerateConfig = {
     readonly mapBounds: [number, number][],
     readonly sitesCount: number
 };
-type LatLong = {
-    readonly lat: number;
-    readonly long: number;
-};
-export type LocationDataRequest = {
-    readonly start_time: ISO8601DateString;
-    readonly end_time?: ISO8601DateString; // default 48h (most snowstorm durations)
-    readonly locations: LatLong[];
+
+export type WeatherEventsRequest = {
+    readonly startTime: ISO8601DateString;
+    readonly endTime?: ISO8601DateString; // default 48h (most snowstorm durations)
+    readonly locations: Location[];
+    readonly snowDepthTrigger: number;
     // auto-generated location config
     readonly autoGenerateConfig?: AutoGenerateConfig;
 }
@@ -28,14 +27,6 @@ export type TimeWindowHTTPRequest ={
     costPerTraveledHour?: number;
 };
 
-// ********************* Cloud Fleet Routing API ************************
-
-// TODO: Slated for removal after 2024-07-31
-export type TimeWindow = Pick<protos.google.cloud.optimization.v1.ITimeWindow, 'startTime' | 'softEndTime' | 'endTime' | 'costPerHourAfterSoftEndTime'>;
-export type VisitRequest = Pick<protos.google.cloud.optimization.v1.Shipment.IVisitRequest, 'arrivalLocation' | 'cost' | 'duration' | 'label' | 'timeWindows'>;
-export type Site = Pick<protos.google.cloud.optimization.v1.IShipment, 'pickups' | 'penaltyCost' | 'label'>;
-export type Vehicle = Pick<protos.google.cloud.optimization.v1.IVehicle, 'costPerHour' | 'costPerTraveledHour' | 'label' | 'startLocation' | 'startTimeWindows' | 'endTimeWindows' | 'travelMode'>;
-
 export type Optimizer = {
     displayName: string;
     modelSpec: {
@@ -48,7 +39,7 @@ export type Optimizer = {
     }
 };
 
-export type RequestData = {
+export type SimulationRequest = {
     readonly userId: string;
     readonly isFastest: boolean;
     readonly simulationId: string;

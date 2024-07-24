@@ -3,7 +3,7 @@ import { ISO8601DateString } from './common';
 
 export type MMQueryResult = {
     readonly lat: number;
-    readonly long: number;
+    readonly lng: number;
     readonly created_at_in_utc: ISO8601DateString | Timestamp;
     predicted_at_in_utc: ISO8601DateString | Timestamp;
     readonly snow_depth_in_cm: number;
@@ -12,7 +12,7 @@ export type MMQueryResult = {
 
 export type WeatherEvent = {
     readonly lat: number;
-    readonly long: number;
+    readonly lng: number;
     readonly startTime: ISO8601DateString;
     readonly endTime: ISO8601DateString;
     readonly snowDepthTrigger: number;
