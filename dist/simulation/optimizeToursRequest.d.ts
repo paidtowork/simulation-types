@@ -8,30 +8,34 @@ type LatitudeLongitude = {
 type TimeWindow = {
     startTime: string;
     endTime: string;
+    softStartTime?: string;
     softEndTime?: string;
+    costPerHourBeforeSoftStartTime?: number;
     costPerHourAfterSoftEndTime?: number;
 };
 
 type OptimizeToursRequestPickup = {
     arrivalLocation: LatitudeLongitude;
+    label: string;
     timeWindows: TimeWindow[];
-    duration: string;
+    duration: string | { [key: string]: string };
 };
 
 type OptimizeToursRequestShipment = {
-    label: string;
+    costsPerVehicleIndices: number[];
+    costsPerVehicle: number[];
     pickups: OptimizeToursRequestPickup[];
-    penaltyCost?: number;
-    name: string;
 };
 
 type OptimizeToursRequestVehicle = {
-    label?: string;
+    label: string;
     startLocation: LatitudeLongitude;
     startTimeWindows: TimeWindow[];
+    endLocation?: LatitudeLongitude;
+    endTimeWindows?: TimeWindow[];
     costPerHour?: number;
     costPerTraveledHour?: number;
-    name: string;
+    name?: string;
 };
 
 type OptimizeToursRequestModel = {
