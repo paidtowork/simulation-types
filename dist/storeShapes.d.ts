@@ -33,6 +33,10 @@ export type LocationStore = {
 // simulation
 export type SimulationStore = {
     readonly simulationId: (string | null);
+    referenceLocation?: {
+        streetAddress: string;
+        coords: LatLng;
+    }
     readonly request?: OptimizeToursRequest;
     readonly result?: OptimizeToursResponse;
     status: SimulationStatus,
