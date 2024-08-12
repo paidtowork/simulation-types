@@ -1,5 +1,5 @@
 import { ISO8601DateString, LatLng, SimulationStatus } from './common';
-import { EncodedPolyline, OptimizeToursResponse } from './simulation/response'
+import { EncodedPolyline, OptimizeToursResponse, Simulation } from './simulation/response'
 import { OptimizeToursRequest } from './simulation/optimizeToursRequest';
 import { WeatherEvent } from './weather';
 
@@ -48,9 +48,11 @@ export type DistanceUnitType = 'mi' | 'km';
 export type LocaleUnitType = 'en' | 'fr';
 export type TemperatureUnitType = 'C' | 'F';
 export type TimeFormatType = 'MMM DD hh:mm A' | 'DD MMM HH:mm';
+
 export type UserStore = {
     distanceUnit: DistanceUnitType;
     locale: LocaleUnitType;
     temperatureUnit: TemperatureUnitType;
     timeFormat: TimeFormatType;
+    simulations: Simulation[] | [];
 };
