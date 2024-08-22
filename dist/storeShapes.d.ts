@@ -50,6 +50,7 @@ export type TemperatureUnitType = 'C' | 'F';
 export type TimeFormatType = 'MMM DD hh:mm A' | 'DD MMM HH:mm';
 
 export type UserStore = {
+    currentSimulationId: string | null;
     distanceUnit: DistanceUnitType;
     locale: LocaleUnitType;
     temperatureUnit: TemperatureUnitType;
