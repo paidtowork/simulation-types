@@ -23,7 +23,6 @@ type OptimizeToursRequestPickup = {
 
 type OptimizeToursRequestShipment = {
     costsPerVehicle: number[];
-    costsPerVehicleIndices: number[];
     isContinuous?: boolean;
     pickups: OptimizeToursRequestPickup[];
 };
