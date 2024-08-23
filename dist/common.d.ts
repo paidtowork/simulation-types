@@ -1,6 +1,6 @@
 export type ISO8601DateString = string;
 export const SIMULATION_STATUS = {
-    'pending': 0, // pending input addresses
+    'pending': 0,
     'centerSelected': 1,
     'sitesSelected': 2,
     'vehiclesSelected': 3,

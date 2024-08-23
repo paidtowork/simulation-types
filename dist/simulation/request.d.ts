@@ -35,6 +35,8 @@ export type Optimizer = {
     }
     optimizeToursSpec: {
         timeout: string;
+        populatePolylines: boolean;
+        populateTransitionPolylines: boolean;
         searchMode?: protos.google.cloud.optimization.v1.OptimizeToursRequest.SearchMode,
     }
 };
