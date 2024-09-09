@@ -39,8 +39,12 @@ export type SimulationStore = {
     }
     readonly request?: OptimizeToursRequest;
     readonly result?: OptimizeToursResponse;
-    status: SimulationStatus,
-    readonly snowDepthTrigger?: number,
+    status: SimulationStatus;
+
+    readonly imgUrl?: string;
+    readonly snowDepthTrigger?: number;
+    readonly title?: string;
+    readonly subtitle?: string;
 };
 
 // user
