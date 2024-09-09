@@ -18,9 +18,13 @@ export type WeatherEventsResponse = {
 // ********************* collection: Result ************************
 export type Simulation = {
     readonly simulationId: string;
-    solutionUrl?: string;
     status: SimulationStatus;
     readonly created_at: ISO8601DateString | Timestamp;
     updated_at: ISO8601DateString | Timestamp;
     readonly userId: string;
+
+    readonly imgUrl?: string;
+    readonly title?: string;
+    readonly solutionUrl?: string;
+    readonly subtitle?: string;
 };
