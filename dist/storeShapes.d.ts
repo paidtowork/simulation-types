@@ -46,6 +46,7 @@ export type SimulationStore = {
 
 // user
 export type DistanceUnitType = 'mi' | 'km';
+export type LengthUnit = 'cm' | 'in';
 export type LocaleUnitType = 'en' | 'fr';
 export type TemperatureUnitType = 'C' | 'F';
 export type TimeFormatType = 'MMM DD hh:mm A' | 'DD MMM HH:mm';
@@ -53,6 +54,7 @@ export type TimeFormatType = 'MMM DD hh:mm A' | 'DD MMM HH:mm';
 export type UserStore = {
     currentSimulationId: string | null;
     distanceUnit: DistanceUnitType;
+    lengthUnit: LengthUnit;
     locale: LocaleUnitType;
     temperatureUnit: TemperatureUnitType;
     timeFormat: TimeFormatType;
