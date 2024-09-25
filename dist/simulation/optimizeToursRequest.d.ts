@@ -6,10 +6,11 @@ type LatitudeLongitude = {
 };
 
 type TimeWindow = {
-    startTime: string;
-    endTime: string;
-    softStartTime?: string;
-    softEndTime?: string;
+    startTime: ISO8601DateString;
+    endTime: ISO8601DateString;
+
+    softStartTime?: ISO8601DateString;
+    softEndTime?: ISO8601DateString;
     costPerHourBeforeSoftStartTime?: number;
     costPerHourAfterSoftEndTime?: number;
 };
@@ -23,14 +24,17 @@ type OptimizeToursRequestPickup = {
 
 type OptimizeToursRequestShipment = {
     costsPerVehicle: number[];
-    isContinuous?: boolean;
     pickups: OptimizeToursRequestPickup[];
+
+    isContinuous?: boolean;
+    readonly name?: string;
 };
 
 type OptimizeToursRequestVehicle = {
     label: string;
     startLocation: LatitudeLongitude;
     startTimeWindows: TimeWindow[];
+
     endLocation?: LatitudeLongitude;
     endTimeWindows?: TimeWindow[];
     costPerHour?: number;
@@ -51,5 +55,7 @@ export type OptimizeToursRequest = {
         timeout: string;
         model: OptimizeToursRequestModel;
         injectedSolutionConstraint?: {};
+        populatePolylines?: boolean;
+        populateTransitionPolylines?: boolean;
     };
 };
