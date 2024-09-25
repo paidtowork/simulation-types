@@ -22,6 +22,7 @@ export type Simulation = {
     readonly created_at: ISO8601DateString | Timestamp;
     updated_at: ISO8601DateString | Timestamp;
     readonly userId: string;
+    readonly snowDepthTrigger:number;
 
     readonly imgUrl?: string;
     readonly title?: string;
