@@ -2,6 +2,7 @@ import * as protos from '@google-cloud/optimization/build/protos/protos';
 import { Timestamp } from '@google-cloud/firestore';
 import { ISO8601DateString, SimulationStatus } from '../common';
 import { WeatherEvent } from '../weather';
+import { LengthUnit } from '../storeShapes';
 
 // ********************* route: fetch-location-data ************************
 export type LocationDataResponse = {
@@ -25,7 +26,9 @@ export type Simulation = {
     readonly snowDepthTrigger:number;
 
     readonly imgUrl?: string;
-    readonly title?: string;
+    readonly lengthUnit?: LengthUnit;
+    readonly referenceLocation?: string;
     readonly solutionUrl?: string;
     readonly subtitle?: string;
+    readonly title?: string;
 };
