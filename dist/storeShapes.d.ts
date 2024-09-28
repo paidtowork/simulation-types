@@ -52,6 +52,8 @@ export type TemperatureUnitType = 'C' | 'F';
 export type TimeFormatType = 'MMM DD hh:mm A' | 'DD MMM HH:mm';
 
 export type UserStore = {
+    // TODO: if not implementing toggle in results for unit types, scrap
+    // ones that already exist part of Simulation.
     currentSimulationId: string | null;
     distanceUnit: DistanceUnitType;
     lengthUnit: LengthUnit;

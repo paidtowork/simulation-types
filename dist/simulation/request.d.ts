@@ -1,6 +1,6 @@
 import * as protos from '@google-cloud/optimization/build/protos/protos';
 import { ISO8601DateString, LatLng } from '../common';
-import { Location } from '../storeShapes';
+import { LengthUnit, Location } from '../storeShapes';
 
 // ********************* fetch-location-data ************************
 type AutoGenerateConfig = {
@@ -49,4 +49,7 @@ export type SimulationRequest = {
     optimizer: Optimizer;
     sites: Site[];
     vehicles: Vehicle[];
+
+    readonly lengthUnit?: LengthUnit;
+    readonly referenceLocation?: string;
 };
