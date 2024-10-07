@@ -25,6 +25,7 @@ export type Simulation = {
     readonly userId: string;
     readonly snowDepthTrigger: number;
     paymentCurrency: PaymentCurrency;
+    paymentId: string;
     paymentNotificationSent: boolean;
     paymentStatus: PaymentStatus;
     paymentTotal: number;
