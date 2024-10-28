@@ -11,7 +11,7 @@ type AutoGenerateConfig = {
 
 export type WeatherEventsRequest = {
     readonly startTime: ISO8601DateString;
-    readonly endTime?: ISO8601DateString; // default 48h (most snowstorm durations)
+    readonly endTime: ISO8601DateString;
     readonly locations: Location[];
     readonly snowDepthTrigger: number;
     // auto-generated location config
