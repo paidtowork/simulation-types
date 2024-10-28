@@ -1,6 +1,7 @@
 import * as protos from '@google-cloud/optimization/build/protos/protos';
 import { ISO8601DateString, LatLng } from '../common';
 import { LengthUnit, Location } from '../storeShapes';
+import { OptimizeToursRequestShipment, OptimizeToursRequestVehicle } from './optimizeToursRequest';
 
 // ********************* fetch-location-data ************************
 type AutoGenerateConfig = {
@@ -10,14 +11,14 @@ type AutoGenerateConfig = {
 
 export type WeatherEventsRequest = {
     readonly startTime: ISO8601DateString;
-    readonly endTime?: ISO8601DateString; // default 48h (most snowstorm durations)
+    readonly endTime: ISO8601DateString;
     readonly locations: Location[];
     readonly snowDepthTrigger: number;
     // auto-generated location config
     readonly autoGenerateConfig?: AutoGenerateConfig;
 }
 
-export type TimeWindowHTTPRequest ={
+export type TimeWindowHTTPRequest = {
     startTime: ISO8601DateString;
     endTime: ISO8601DateString;
 
@@ -47,8 +48,8 @@ export type SimulationRequest = {
     readonly simulationId: string;
     readonly snowDepthTrigger: number;
     optimizer: Optimizer;
-    sites: Site[];
-    vehicles: Vehicle[];
+    sites: OptimizeToursRequestShipment[];
+    vehicles: OptimizeToursRequestVehicle[];
 
     readonly lengthUnit?: LengthUnit;
     readonly referenceLocation?: string;

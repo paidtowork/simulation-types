@@ -32,15 +32,21 @@ export type LocationStore = {
 
 // simulation
 export type SimulationStore = {
+    paymentNotificationSent: boolean;
+    paymentStatus: PaymentStatus;
     readonly simulationId: (string | null);
+    status: SimulationStatus;
+
+    paymentCurrency?: PaymentCurrency;
+    paymentTotal?: number;
+    paymentId?: string;
+    paymentUpdatedAt?: ISO8601DateString | Timestamp;
     referenceLocation?: {
         streetAddress: string;
         coords: LatLng;
     }
     readonly request?: OptimizeToursRequest;
     readonly result?: OptimizeToursResponse;
-    status: SimulationStatus;
-
     readonly snowDepthTrigger?: number;
 };
 
