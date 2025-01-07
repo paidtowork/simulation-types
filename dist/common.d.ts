@@ -12,11 +12,6 @@ export const SIMULATION_STATUS = {
 } as const;
 export type SimulationStatus = typeof SIMULATION_STATUS[keyof typeof SIMULATION_STATUS];
 
-export const METEO_DB: string = 'snow_depth';
-export const METEO_DB_1100m_PRECISION_IN_DECIMALS: number = 2;
-export const METEO_DB_1100m_BOUND_FACTOR: number = (1 / 10 ** METEO_DB_1100m_PRECISION_IN_DECIMALS);
-export const METEO_DB_5500m_BOUND_FACTOR: number = 0.05;
-
 // Route
 export type EncodedPolyline = {
     readonly points: string;
