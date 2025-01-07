@@ -13,7 +13,9 @@ export type WeatherEventsRequest = {
     readonly startTime: ISO8601DateString;
     readonly endTime: ISO8601DateString;
     readonly locations: Location[];
+    readonly boundFactor: number;
     readonly snowDepthTrigger: number;
+
     // auto-generated location config
     readonly autoGenerateConfig?: AutoGenerateConfig;
 }
