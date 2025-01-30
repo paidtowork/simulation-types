@@ -1,4 +1,5 @@
 export * from './common';
+export * from './simulation/events';
 export * from './simulation/optimizeToursRequest';
 export * from './simulation/optimizeToursResponse';
 export * from './simulation/request';
