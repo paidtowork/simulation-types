@@ -9,8 +9,12 @@ export type SaltUsageGuideline = {
 };
 
 export type Event = {
+    id?: number,
+    name?:string,
     type: EVENT_TYPE,
     start_time_in_utc: ISO8601DateString,
+
+    snow_depth_in_cm?: number,
     // single guideline: minimal salt required for DEFINITE event at start
     // multiple guidelines: for indefinitely long events: terminal salt job
     salt_usage_guidelines?: SaltUsageGuideline[],
