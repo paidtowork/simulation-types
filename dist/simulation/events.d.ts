@@ -14,6 +14,7 @@ export type Event = {
     type: EVENT_TYPE,
     start_time_in_utc: ISO8601DateString,
 
+    pavement_temperatures?: number[],
     snow_depth_in_cm?: number,
     // single guideline: minimal salt required for DEFINITE event at start
     // multiple guidelines: for indefinitely long events: terminal salt job
